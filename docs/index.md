@@ -6,6 +6,6 @@ hero:
     - text: 开始
       link: /
     - text: Github
-      link: /
+      link: https://github.com/lxzmo/drum
 ---
 
