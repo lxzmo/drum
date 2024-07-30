@@ -2,6 +2,14 @@
   "name": "@lxzmo/drum",
   "version": "0.0.1",
   "description": "文档/文本编辑器",
+  "homepage":"https://lxzmo.github.io/drum",
+  "bugs": {
+    "url": "https://github.com/lxzmo/drum/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lxzmo/drum"
+  },
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -18,7 +26,9 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "authors": [],
+  "authors": [
+    "lxzmo"
+  ],
   "license": "MIT",
   "files": [
     "dist"
@@ -46,7 +56,8 @@
     ]
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
