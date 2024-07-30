@@ -1,17 +1,30 @@
-# @lxzmo/drum
+# drum
 
-[![NPM version](https://img.shields.io/npm/v/@lxzmo/drum.svg?style=flat)](https://npmjs.org/package/@lxzmo/drum)
-[![NPM downloads](http://img.shields.io/npm/dm/@lxzmo/drum.svg?style=flat)](https://npmjs.org/package/@lxzmo/drum)
+文档/文本编辑器
 
-文本编辑器
+## Document
 
-## Usage
+[中文文档](https://lxzmo.github.io/drum)
 
-TODO
+## Install
 
-## Options
+**npm**
 
-TODO
+```bash
+npm install @lxzmo/drum
+```
+
+**yarn**
+
+```bash
+yarn add @lxzmo/drum
+```
+
+**pnpm**
+
+```bash
+pnpm add @lxzmo/drum
+```
 
 ## Development
 
