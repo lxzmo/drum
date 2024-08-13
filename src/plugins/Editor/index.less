@@ -1,0 +1,273 @@
+.editor-shell {
+  margin: 20px auto;
+  border-radius: 2px;
+  max-width: 1100px;
+  color: #000;
+  position: relative;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.editor-shell .editor-container {
+  background: #fff;
+  position: relative;
+  display: block;
+}
+
+.editor-scroller {
+  border: 0;
+  display: flex;
+  position: relative;
+  outline: 0;
+  z-index: 0;
+  overflow: auto;
+  resize: vertical;
+  overflow-x: hidden;
+}
+
+.editor {
+  flex: auto;
+  position: relative;
+  resize: vertical;
+  z-index: -1;
+  width: 100%;
+}
+
+.content-editable-root {
+  border: 0;
+  font-size: 15px;
+  display: block;
+  position: relative;
+  outline: 0;
+  padding: 8px 28px 40px;
+  min-height: 200px;
+}
+
+.content-editable-placeholder {
+  font-size: 15px;
+  color: #999;
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 8px;
+  left: 28px;
+  right: 28px;
+  user-select: none;
+  white-space: nowrap;
+  display: inline-block;
+  pointer-events: none;
+}
+
+// toolbar
+.drum-toolbar {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  background-color: #fff;
+  margin-bottom: 1px;
+  padding: 5px;
+}
+
+.editor-shell span.editor-image {
+  cursor: default;
+  display: inline-block;
+  position: relative;
+  user-select: none;
+}
+
+.editor-shell .editor-image img {
+  max-width: 100%;
+  cursor: default;
+}
+
+.editor-shell .editor-image img.focused {
+  outline: 2px solid rgb(60, 132, 244);
+  user-select: none;
+}
+
+.editor-shell .editor-image img.focused.draggable {
+  cursor: grab;
+}
+
+.editor-shell .editor-image img.focused.draggable:active {
+  cursor: grabbing;
+}
+
+.editor-shell .editor-image .image-caption-container .tree-view-output {
+  margin: 0;
+  border-radius: 0;
+}
+
+.editor-shell .editor-image .image-caption-container {
+  display: block;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 100px;
+  color: #000;
+  overflow: hidden;
+}
+
+.editor-shell .editor-image .image-caption-button {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  width: 30%;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-width: 100px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.editor-shell .editor-image .image-caption-button:hover {
+  background-color: rgba(60, 132, 244, 0.5);
+}
+
+.editor-shell .editor-image .image-edit-button {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-image: url(/src/images/icons/pencil-fill.svg);
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  vertical-align: -0.25em;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.editor-shell .editor-image .image-edit-button:hover {
+  background-color: rgba(60, 132, 244, 0.1);
+}
+
+.editor-shell .editor-image .image-resizer {
+  display: block;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  background-color: rgb(60, 132, 244);
+  border: 1px solid #fff;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-n {
+  top: -6px;
+  left: 48%;
+  cursor: n-resize;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-ne {
+  top: -6px;
+  right: -6px;
+  cursor: ne-resize;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-e {
+  bottom: 48%;
+  right: -6px;
+  cursor: e-resize;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-se {
+  bottom: -2px;
+  right: -6px;
+  cursor: nwse-resize;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-s {
+  bottom: -2px;
+  left: 48%;
+  cursor: s-resize;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-sw {
+  bottom: -2px;
+  left: -6px;
+  cursor: sw-resize;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-w {
+  bottom: 48%;
+  left: -6px;
+  cursor: w-resize;
+}
+
+.editor-shell .editor-image .image-resizer.image-resizer-nw {
+  top: -6px;
+  left: -6px;
+  cursor: nw-resize;
+}
+
+.typeahead-popover {
+  background: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.component-picker-menu {
+  width: 218px;
+  padding: 10px 15px;
+}
+
+.component-gird-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.component-menu-title {
+  font-size: 12px;
+  color: #999;
+  margin: 10px 5px;
+}
+
+.ant-btn {
+  padding: 4px 5px;
+}
+
+.ant-btn-text:disabled {
+  opacity: 0.25;
+  color: rgba(0, 0, 0, 1);
+}
+
+.ant-color-picker
+  .ant-color-picker-inner
+  .ant-color-picker-presets-items
+  .ant-color-picker-presets-color {
+  width: 18px;
+  height: 18px;
+}
+
+.ant-color-picker
+  .ant-color-picker-inner
+  .ant-color-picker-presets-items
+  .ant-color-picker-presets-color::before {
+  width: 22px;
+  height: 22px;
+}
+.ant-color-picker
+  .ant-color-picker-inner
+  .ant-color-picker-presets-items
+  .ant-color-picker-presets-color::after {
+  width: calc(18px / 13 * 5);
+  height: calc(18px / 13 * 8);
+}
+
+.ant-upload {
+  width: 100%;
+}

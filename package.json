@@ -2,7 +2,7 @@
   "name": "@lxzmo/drum",
   "version": "0.0.1",
   "description": "文档/文本编辑器",
-  "homepage":"https://lxzmo.github.io/drum",
+  "homepage": "https://lxzmo.github.io/drum",
   "bugs": {
     "url": "https://github.com/lxzmo/drum/issues"
   },
@@ -10,29 +10,26 @@
     "type": "git",
     "url": "https://github.com/lxzmo/drum"
   },
+  "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "npm run dev",
-    "dev": "dumi dev",
     "build": "father build",
     "build:watch": "father dev",
+    "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
-    "prepare": "husky install && dumi setup",
     "doctor": "father doctor",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepare": "husky install && dumi setup",
+    "prepublishOnly": "father doctor && npm run build",
+    "start": "npm run dev"
   },
-  "authors": [
-    "lxzmo"
-  ],
-  "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -55,13 +52,28 @@
       "prettier --parser=typescript --write"
     ]
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+  "dependencies": {
+    "@ant-design/colors": "^7.1.0",
+    "@ant-design/icons": "^5.4.0",
+    "@lexical/code": "^0.17.0",
+    "@lexical/link": "^0.17.0",
+    "@lexical/list": "^0.17.0",
+    "@lexical/mark": "^0.17.0",
+    "@lexical/markdown": "^0.17.0",
+    "@lexical/react": "^0.17.0",
+    "@lexical/rich-text": "^0.17.0",
+    "@lexical/selection": "^0.17.0",
+    "@lexical/table": "^0.17.0",
+    "@lexical/text": "^0.17.0",
+    "@lexical/utils": "^0.17.0",
+    "@lexical/yjs": "^0.17.0",
+    "@types/lodash-es": "^4.17.12",
+    "ahooks": "^3.8.0",
+    "antd": "^5.19.3",
+    "lexical": "^0.17.0",
+    "lodash-es": "^4.17.21",
+    "prettier": "^2.3.2",
+    "yjs": "^13.6.18"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
@@ -74,17 +86,21 @@
     "father": "^4.1.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "stylelint": "^14.9.1"
   },
-  "dependencies": {
-    "@ant-design/icons": "^5.4.0",
-    "@lexical/react": "^0.16.1",
-    "antd": "^5.19.3",
-    "lexical": "^0.16.1"
-  }
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmmirror.com/"
+  },
+  "authors": [
+    "lxzmo"
+  ]
 }

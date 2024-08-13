@@ -14,16 +14,16 @@
 npm install @lxzmo/drum
 ```
 
+**pnpm**
+
+```bash
+pnpm install @lxzmo/drum
+```
+
 **yarn**
 
 ```bash
 yarn add @lxzmo/drum
-```
-
-**pnpm**
-
-```bash
-pnpm add @lxzmo/drum
 ```
 
 ## Development

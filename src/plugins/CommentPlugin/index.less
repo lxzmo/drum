@@ -1,0 +1,415 @@
+.comment-plugin-add-comment-box {
+  display: block;
+  position: fixed;
+  border-radius: 20px;
+  background-color: white;
+  width: 40px;
+  height: 60px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.comment-plugin-add-comment-box-button {
+  border-radius: 20px;
+  border: 0;
+  background: none;
+  width: 40px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.comment-plugin-add-comment-box-button:hover {
+  background-color: #f6f6f6;
+}
+
+i.add-comment {
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  vertical-align: -10px;
+  background-image: url(../../images/icons/chat-left-text.svg);
+}
+
+@media (max-width: 1024px) {
+  .comment-plugin-add-comment-box {
+    display: none;
+  }
+}
+
+.comment-plugin-comment-input-box {
+  display: block;
+  position: absolute;
+  width: 250px;
+  min-height: 80px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 24;
+  animation: show-input-box 0.4s ease;
+}
+
+.comment-plugin-comment-input-box::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 0.5em;
+  right: -1em;
+  top: 0;
+  left: calc(50% + 0.25em);
+  box-sizing: border-box;
+  border: 0.5em solid black;
+  border-color: transparent transparent #fff #fff;
+  transform-origin: 0 0;
+  transform: rotate(135deg);
+  box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+@keyframes show-input-box {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comment-plugin-comment-input-box-buttons {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px 10px 10px;
+  gap: 10px;
+}
+
+.comment-plugin-comment-input-box-editor-container {
+  position: relative;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.comment-plugin-comment-input-box-editor {
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  caret-color: rgb(5, 5, 5);
+  display: block;
+  padding: 9px 10px 10px 9px;
+  min-height: 80px;
+}
+
+.comment-plugin-comment-input-box-editor:focus {
+  outline: 1px solid rgb(66, 135, 245);
+}
+
+.comment-plugin-show-comments-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #ddd;
+  border-radius: 10px;
+  z-index: 999;
+}
+
+i.comments {
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  vertical-align: -10px;
+  background-image: url(../../images/icons/comments.svg);
+  opacity: 0.5;
+  transition: opacity 0.2s linear;
+}
+
+@media (max-width: 1024px) {
+  .comment-plugin-show-comments-button {
+    display: none;
+  }
+}
+
+.comment-plugin-show-comments-button:hover i.comments {
+  opacity: 1;
+}
+
+.comment-plugin-show-comments-button.active {
+  background-color: #ccc;
+}
+
+.comment-plugin-comments-panel {
+  position: fixed;
+  right: 0;
+  width: 300px;
+  height: calc(100% - 88px);
+  top: 88px;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: show-comments 0.2s ease;
+  z-index: 25;
+}
+
+@keyframes show-comments {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.comment-plugin-comments-panel-heading {
+  padding-left: 15px;
+  padding-top: 10px;
+  margin: 0;
+  height: 34px;
+  border-bottom: 1px solid #eee;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  color: #444;
+  overflow: hidden;
+}
+
+.comment-plugin-comments-panel-editor {
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  caret-color: rgb(5, 5, 5);
+  display: block;
+  padding: 9px 10px 10px 9px;
+  min-height: 20px;
+}
+
+.comment-plugin-comments-panel-editor::before {
+  content: '';
+  width: 30px;
+  height: 20px;
+  float: right;
+}
+
+.comment-plugin-comments-panel-send-button {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background: none;
+}
+
+.comment-plugin-comments-panel-send-button:hover {
+  background: none;
+}
+
+i.send {
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  vertical-align: -10px;
+  background-image: url(../../images/icons/send.svg);
+  opacity: 0.5;
+  transition: opacity 0.2s linear;
+}
+
+.comment-plugin-comments-panel-send-button:hover i.send {
+  opacity: 1;
+  filter: invert(45%) sepia(98%) saturate(2299%) hue-rotate(201deg)
+    brightness(100%) contrast(92%);
+}
+
+.comment-plugin-comments-panel-send-button[disabled] i.send {
+  opacity: 0.3;
+}
+
+.comment-plugin-comments-panel-send-button:hover[disabled] i.send {
+  opacity: 0.3;
+  filter: none;
+}
+
+.comment-plugin-comments-panel-empty {
+  color: #777;
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  top: calc(50% - 15px);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.comment-plugin-comments-panel-list {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  overflow-y: auto;
+  height: calc(100% - 45px);
+}
+
+.comment-plugin-comments-panel-list-comment {
+  padding: 15px 0 15px 15px;
+  margin: 0;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+.comment-plugin-comments-panel-list-thread.active
+  .comment-plugin-comments-panel-list-comment:hover {
+  background-color: inherit;
+}
+
+.comment-plugin-comments-panel-list-comment p {
+  margin: 0;
+  color: #444;
+}
+
+.comment-plugin-comments-panel-list-details {
+  color: #444;
+  padding-bottom: 5px;
+  vertical-align: top;
+}
+
+.comment-plugin-comments-panel-list-comment-author {
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.comment-plugin-comments-panel-list-comment-time {
+  color: #999;
+}
+
+.comment-plugin-comments-panel-list-thread {
+  padding: 0 0 0 0;
+  margin: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  transition: all 0.2s linear;
+  border-left: 0 solid #eee;
+}
+
+.comment-plugin-comments-panel-list-thread:first-child,
+.comment-plugin-comments-panel-list-thread
+  + .comment-plugin-comments-panel-list-thread {
+  border-top: none;
+}
+
+.comment-plugin-comments-panel-list-thread.interactive {
+  cursor: pointer;
+}
+
+.comment-plugin-comments-panel-list-thread.interactive:hover {
+  background-color: #fafafa;
+}
+
+.comment-plugin-comments-panel-list-thread.active {
+  background-color: #fafafa;
+  border-left: 15px solid #eee;
+  cursor: inherit;
+}
+
+.comment-plugin-comments-panel-list-thread-quote-box {
+  padding-top: 10px;
+  color: #ccc;
+  display: block;
+}
+
+.comment-plugin-comments-panel-list-thread-quote {
+  margin: 0px 10px 0 10px;
+}
+
+.comment-plugin-comments-panel-list-thread-quote span {
+  color: #222;
+  background-color: rgba(255, 212, 0, 0.4);
+  padding: 1px;
+  line-height: 1.4;
+  display: inline;
+  font-weight: bold;
+}
+
+.comment-plugin-comments-panel-list-thread-comments {
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+.comment-plugin-comments-panel-list-thread-comments
+  .comment-plugin-comments-panel-list-comment:first-child {
+  border: none;
+  margin-left: 0;
+  padding-left: 5px;
+}
+
+.comment-plugin-comments-panel-list-thread-comments
+  .comment-plugin-comments-panel-list-comment:first-child.comment-plugin-comments-panel-list-comment:last-child {
+  padding-bottom: 5px;
+}
+
+.comment-plugin-comments-panel-list-thread-comments
+  .comment-plugin-comments-panel-list-comment {
+  padding-left: 10px;
+  border-left: 5px solid #eee;
+  margin-left: 5px;
+}
+
+.comment-plugin-comments-panel-list-thread-editor {
+  position: relative;
+  padding-top: 1px;
+}
+
+.comment-plugin-comments-panel-list-delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  opacity: 0;
+}
+
+.comment-plugin-comments-panel-deleted-comment,
+.comment-plugin-comments-panel-list-comment:hover
+  .comment-plugin-comments-panel-list-delete-button,
+.comment-plugin-comments-panel-list-thread-quote-box:hover
+  .comment-plugin-comments-panel-list-delete-button {
+  opacity: 0.5;
+}
+
+.comment-plugin-comments-panel-list-delete-button:hover {
+  background-color: transparent;
+  opacity: 1;
+  filter: invert(45%) sepia(98%) saturate(2299%) hue-rotate(201deg)
+    brightness(100%) contrast(92%);
+}
+
+.comment-plugin-comments-panel-list-delete-button i.delete {
+  background-size: contain;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: 15px;
+  width: 15px;
+  vertical-align: -10px;
+  background-image: url(../../images/icons/trash3.svg);
+  transition: opacity 0.2s linear;
+}
+
+.modal-content {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}

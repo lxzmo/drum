@@ -1,0 +1,403 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ *
+ */
+.default-theme-ltr {
+  text-align: left;
+}
+.default-theme-rtl {
+  text-align: right;
+}
+.default-theme-paragraph {
+  margin: 0;
+  position: relative;
+}
+.default-theme-quote {
+  margin: 0;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: rgb(101, 103, 107);
+  border-left-color: rgb(206, 208, 212);
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding-left: 16px;
+}
+.default-theme-h1 {
+  font-size: 2em;
+}
+.default-theme-h2 {
+  font-size: 1.5em;
+}
+.default-theme-h3 {
+  font-size: 1.17em;
+}
+.default-theme-indent {
+  --lexical-indent-base-value: 40px;
+}
+.default-theme-text-bold {
+  font-weight: bold;
+}
+.default-theme-text-italic {
+  font-style: italic;
+}
+.default-theme-text-underline {
+  text-decoration: underline;
+}
+.default-theme-text-strikethrough {
+  text-decoration: line-through;
+}
+.default-theme-text-underline-strikethrough {
+  text-decoration: underline line-through;
+}
+.default-theme-text-subscript {
+  font-size: 0.8em;
+  vertical-align: sub !important;
+}
+.default-theme-text-superscript {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+.default-theme-text-code {
+  background-color: rgb(240, 242, 245);
+  padding: 1px 0.25rem;
+  font-family: Menlo, Consolas, Monaco, monospace;
+  font-size: 94%;
+}
+.default-theme-token-embed-hashtag {
+  background-color: rgba(88, 144, 255, 0.15);
+  border-bottom: 1px solid rgba(88, 144, 255, 0.3);
+}
+.default-theme-link {
+  color: rgb(33, 111, 219);
+  text-decoration: none;
+}
+.default-theme-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.default-theme-code {
+  background-color: #fafafa;
+  font-family: Menlo, Consolas, Monaco, monospace;
+  display: block;
+  padding: 8px 8px 8px 52px;
+  line-height: 1.53;
+  font-size: 13px;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  overflow-x: auto;
+  position: relative;
+  tab-size: 2;
+}
+.default-theme-code:before {
+  content: attr(data-gutter);
+  position: absolute;
+  background-color: #fafafa;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #ccc;
+  padding: 8px;
+  color: #777;
+  white-space: pre-wrap;
+  text-align: right;
+  min-width: 15px;
+}
+
+.default-theme-tablebox {
+  width: 100%;
+  overflow: auto;
+  outline: none;
+}
+
+.default-theme-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  table-layout: fixed;
+  width: max-content;
+}
+.default-theme-table-selection *::selection {
+  background-color: transparent;
+}
+.default-theme-table-selected {
+  outline: 2px solid rgb(60, 132, 244);
+}
+.default-theme-table-cell {
+  border: 1px solid #dee0e3;
+  width: 75px;
+  min-width: 75px;
+  vertical-align: top;
+  text-align: start;
+  padding: 6px 8px;
+  position: relative;
+  outline: none;
+}
+.default-theme-table-cell-sorted-indicator {
+  display: block;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #999;
+}
+.default-theme-table-cell-resizer {
+  position: absolute;
+  right: -4px;
+  height: 100%;
+  width: 8px;
+  cursor: ew-resize;
+  z-index: 10;
+  top: 0;
+}
+.default-theme-table-cell-header {
+  background-color: #f2f3f5;
+  text-align: start;
+}
+.default-theme-table-cell-selected {
+  background-color: #c9dbf0;
+}
+.default-theme-table-cell-primary-selected {
+  border: 2px solid rgb(60, 132, 244);
+  display: block;
+  height: calc(100% - 2px);
+  position: absolute;
+  width: calc(100% - 2px);
+  left: -1px;
+  top: -1px;
+  z-index: 2;
+}
+.default-theme-table-cell-editing {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+@keyframes table-controls {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.default-theme-table-cell-resize-ruler {
+  display: block;
+  position: absolute;
+  width: 1px;
+  background-color: rgb(60, 132, 244);
+  height: 100%;
+  top: 0;
+}
+.default-theme-tableC-cell-action-button-container {
+  display: block;
+  right: 5px;
+  top: 6px;
+  position: absolute;
+  z-index: 4;
+  width: 20px;
+  height: 20px;
+}
+.default-theme-table-cell-action-button {
+  background-color: #eee;
+  display: block;
+  border: 0;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  color: #222;
+  cursor: pointer;
+}
+.default-theme-table-cell-action-button:hover {
+  background-color: #ddd;
+}
+.default-theme-character-limit {
+  display: inline;
+  background-color: #ffbbbb !important;
+}
+.default-theme-ol1 {
+  padding: 0;
+  margin: 0;
+  list-style-position: outside;
+}
+.default-theme-ol2 {
+  padding: 0;
+  margin: 0;
+  list-style-type: upper-alpha;
+  list-style-position: outside;
+}
+.default-theme-ol3 {
+  padding: 0;
+  margin: 0;
+  list-style-type: lower-alpha;
+  list-style-position: outside;
+}
+.default-theme-ol4 {
+  padding: 0;
+  margin: 0;
+  list-style-type: upper-roman;
+  list-style-position: outside;
+}
+.default-theme-ol5 {
+  padding: 0;
+  margin: 0;
+  list-style-type: lower-roman;
+  list-style-position: outside;
+}
+.default-theme-ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: outside;
+}
+.default-theme-list-item {
+  margin: 0 32px;
+}
+.default-theme-list-item-checked,
+.default-theme-list-item-unchecked {
+  position: relative;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  list-style-type: none;
+  outline: none;
+}
+.default-theme-list-item-checked {
+  text-decoration: line-through;
+}
+.default-theme-list-item-unchecked:before,
+.default-theme-list-item-checked:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 0;
+  cursor: pointer;
+  display: block;
+  background-size: cover;
+  position: absolute;
+}
+.default-theme-list-item-unchecked[dir='rtl']:before,
+.default-theme-list-item-checked[dir='rtl']:before {
+  left: auto;
+  right: 0;
+}
+.default-theme-list-item-unchecked:focus:before,
+.default-theme-list-item-checked:focus:before {
+  box-shadow: 0 0 0 2px #a6cdfe;
+  border-radius: 2px;
+}
+.default-theme-list-item-unchecked:before {
+  border: 1px solid #999;
+  border-radius: 2px;
+}
+.default-theme-list-item-checked:before {
+  border: 1px solid rgb(61, 135, 245);
+  border-radius: 2px;
+  background-color: #3d87f5;
+  background-repeat: no-repeat;
+}
+.default-theme-list-item-checked:after {
+  content: '';
+  cursor: pointer;
+  border-color: #fff;
+  border-style: solid;
+  position: absolute;
+  display: block;
+  top: 6px;
+  width: 3px;
+  left: 7px;
+  right: 7px;
+  height: 6px;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+.default-theme-nested-list-item {
+  list-style-type: none;
+}
+.default-theme-nested-list-item:before,
+.default-theme-nested-list-item:after {
+  display: none;
+}
+.default-theme-token-comment {
+  color: slategray;
+}
+.default-theme-token-punctuation {
+  color: #999;
+}
+.default-theme-token-property {
+  color: #905;
+}
+.default-theme-token-selector {
+  color: #690;
+}
+.default-theme-token-operator {
+  color: #9a6e3a;
+}
+.default-theme-token-attr {
+  color: #07a;
+}
+.default-theme-token-variable {
+  color: #e90;
+}
+.default-theme-token-function {
+  color: #dd4a68;
+}
+.default-theme-mark {
+  background: rgba(255, 212, 0, 0.14);
+  border-bottom: 2px solid rgba(255, 212, 0, 0.3);
+  padding-bottom: 2px;
+}
+.default-theme-mark-overlap {
+  background: rgba(255, 212, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 212, 0, 0.7);
+}
+.default-theme-mark.selected {
+  background: rgba(255, 212, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 212, 0, 1);
+}
+.default-theme-mark-overlap.selected {
+  background: rgba(255, 212, 0, 0.7);
+  border-bottom: 2px solid rgba(255, 212, 0, 0.7);
+}
+.default-theme-token-embed-block {
+  user-select: none;
+}
+.default-theme-token-embed-block-focus {
+  outline: 2px solid rgb(60, 132, 244);
+}
+.default-theme-layout-container {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+}
+.default-theme-layout-item {
+  border: 1px dashed #ddd;
+  padding: 8px 16px;
+}
+.default-theme-autocomplete {
+  color: #ccc;
+}
+.default-theme-hr {
+  padding: 2px 2px;
+  border: none;
+  margin: 1em 0;
+  cursor: pointer;
+}
+.default-theme-hr:after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #ccc;
+  line-height: 2px;
+}
+.default-theme-hr.selected {
+  outline: 2px solid rgb(60, 132, 244);
+  user-select: none;
+}
