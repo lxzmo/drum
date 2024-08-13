@@ -1,6 +1,6 @@
 {
   "name": "@lxzmo/drum",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "文档/文本编辑器",
   "homepage": "https://lxzmo.github.io/drum",
   "bugs": {
@@ -78,6 +78,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@types/prettier": "^2.3.2",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@umijs/lint": "^4.0.0",
